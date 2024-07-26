@@ -12,7 +12,9 @@ RUN apt-get -y update && apt-get -y install mongodb-org
 RUN systemctl start mongod
 
 # install python
-RUN apt-get -y install python-pip python-dev build-essential
+RUN apt-get -y install python3-pip python3-dev build-essential
 RUN mkdir /workspace
 RUN mkdir /workspace/src
 RUN mkdir /workspace/data
+
+EXPOSE 27017
