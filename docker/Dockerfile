@@ -10,6 +10,7 @@ RUN curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | gpg -o /usr/s
 RUN echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 RUN apt-get -y update && apt-get -y install mongodb-org
 RUN systemctl start mongod
+RUN systemctl enable mongod
 
 # install python
 RUN apt-get -y install python3-pip python3-dev build-essential
